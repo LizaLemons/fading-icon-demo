@@ -3,9 +3,11 @@
 
 $(document).ready(function(){
 
+  console.log("Hello this is dog.");
+
   $(".flex-container").css("display", "flex");
 
-  // set div height on load && window resize
+  // set height onload && window resize
   $(window).on("resize", function () {
     var height = $(window).height();
     $(".mock-div").css('height', height);
@@ -13,12 +15,12 @@ $(document).ready(function(){
     $('.flex-container').css('height', height + 'px');
   }).resize();
 
-  // fade to reveal, then hide so that <a> links are clickable
+  // fade to reveal, then hide
   $(".mock-div").delay(300).animate({"opacity": "0"}, 1000, function() {
     $(".mock-div").hide();
   }); // end mock div reveal
 
-  // icon stuff 
+  // icon stuff
   var imgArr = [
     "img/bacon.png",
     "img/cherries.png",
@@ -45,7 +47,6 @@ $(document).ready(function(){
       $("#the-img").fadeIn("slow");
 
       if (counter == (arrLength)) {
-        console.log("counter is at limit");
         counter = 0;
       }
 
